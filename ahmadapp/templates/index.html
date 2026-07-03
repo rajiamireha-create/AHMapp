@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+    {%block title%}
+      <title>this is index page </title>
+    {%endblock title%}
+    {%block contact%}
+
+    
+    <div class="container">
+      <div class ="row mt-5">
+        <div class="col-lg-4">
+          <img src="{% static 'images/gamma.jpg' %}"  class="shadow-sm p-3 mb-5 bg-body-tertiary rounded"  alt="LOGO" height="300" width = "400">
+        </div>
+        <div class="col-lg-4">
+          <img src="{% static 'images/nasa.jpg' %}"  class="shadow-sm p-3 mb-5 bg-body-tertiary rounded" alt="LOGO" height="300" width = "400">
+        </div>
+        <div class="col-lg-4">
+          <img src="{% static 'images/headphone.jpg' %}"  class="shadow-sm p-3 mb-5 bg-body-tertiary rounded" alt="LOGO" height="300" width = "400">
+        </div>
+       </div>
+
+       <div class ="row mt-5">
+                <div class="col-md-10 offset-md-1">
+                <h1 class=" text-center  text-primary"   >ahmad app keep you tracking your jost and tasks</h1>
+                <h2 class=" text-center mt-3" >plan your day better , get your life in order</h2>
+                <h5 class=" text-center">ahmad app keep you tracking your just and tasks</h5>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <center><a  href="{% url 'ahmadapp' %}"><button class="btn btn-primary shadow" type="button" >lets get started </button></a></center>
+              </div>
+        </div>
+    </div>
+
+    {%endblock contact%}

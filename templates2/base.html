@@ -1,0 +1,73 @@
+{% load static %}  
+<!doctype html>
+<html lang="en">
+  <head >
+    <title>this is base page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%block title%}
+    {%endblock title%}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel = "icon" href = "{%static 'images/logo2.svg' %}" type="image/gif" sizes="16x16">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{%url 'ahmadapp'%}">
+          <img src="{%static 'images/logo2.svg' %}" alt="LOGO" height="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+            </li>
+            
+            <a class="nav-link" href="{%url 'features' %}">Features</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}"> contact </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'pricing' %}">Pricing</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            {%if user.is_authenticated %}
+            <div class="d-flex" role="search">
+              <div class="p-2 bg-dark text-white">{{ user.username }}</div>
+            <form action="{%url 'logout' %}"  method = "POST" style="display: inline;">
+            {%csrf_token%}
+            <button type="submit" class="btn btn-light">logout</button>
+            </form>
+            </div>
+
+            {%else%}
+            <div style="display: flex; gap:10px;align-items:center;">
+            <form action="{%url 'login' %}"  method = "POST">
+            {%csrf_token%}
+            <button type="submit" class="btn btn-info  my-2 my-sm-0">login</button>
+            </form>
+            <form action="{%url 'register' %}"  method = "POST">
+            {%csrf_token%}
+            <button type="submit" class="btn btn-success mr-2 my-2 my-sm-0 ">register</button>
+            </form>
+            </div>
+          {%endif%}
+          
+        </span>
+      </div>
+    </div>
+  </nav>
+</head>
+
+
+
+  <body class="bg-light">
+
+    {%block contact%}
+    {%endblock contact%}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

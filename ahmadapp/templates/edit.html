@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+    {%block title%}
+      <title>this is edit page</title>
+    {%endblock title%}
+    
+    {%block contact%}
+        <div class="container" >
+            <h1> {{ task_obj.task_name }} </h1>
+    {%if  task_obj.manager == request.user%}
+          <form method = "POST"  class = "row">  
+          {% csrf_token %}
+          <div class = "col-lg-2">
+          <label class="form-label">you want to update task ?</label>
+          </div>
+          <div class = "col-lg-6">
+            <input type="text"  class =" form-control col-lg-4 " name="task_name" placeholder="{{ task_obj.task_name }}" value="{{ task_obj.task_name }}">
+          </div>
+          <div class = "col-lg-2">
+          <input type="hidden" name="done"  value = {{task_obj.done}}>
+          </div>
+          <div class = "col-lg-2">
+            <button type="submit" class="btn btn-primary  ">Update task</button>
+          </div>
+    {% else %}
+          <p> "you cannot access this page "</p>
+    {% endif %}
+</form>
+</div>
+    {%endblock contact%}
