@@ -1,1 +1,1 @@
-web: python manage.py makemigrations  && python manage.py  migrate &&  gunicorn taskmate.wsgi
+web: python manage.py makemigrations  && python manage.py  migrate &&  gunicorn taskmate.wsgi --bind 0.0.0.0:8080
