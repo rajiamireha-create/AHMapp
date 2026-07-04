@@ -100,7 +100,7 @@ DATABASES ={
 }
 
 
-postgresql://postgres:oXPSImEoPppEnZGRkRECKYHyQDvqqqxc@mainline.proxy.rlwy.net:11361/railway
+#postgresql://postgres:oXPSImEoPppEnZGRkRECKYHyQDvqqqxc@mainline.proxy.rlwy.net:11361/railway
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
