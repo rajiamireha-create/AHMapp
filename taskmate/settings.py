@@ -88,16 +88,7 @@ WSGI_APPLICATION = 'taskmate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES ={   
-  'default':{
-        'ENGINE':'django.db.backends.postgresql',
-        'NAME':env("DJANGO_NAME"),
-        'USER':env("DJANGO_USER"),
-        'PASSWORD':env("DJANGO_PASSWORD"),
-        'HOST':env("DJANGO_HOST"),
-        'PORT':env("DJANGO_PORT"),
-    }   
-}
+
 
 
 #postgresql://postgres:oXPSImEoPppEnZGRkRECKYHyQDvqqqxc@mainline.proxy.rlwy.net:11361/railway
