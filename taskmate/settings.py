@@ -19,11 +19,15 @@ environ.Env.read_env()
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DJANGO_DEBUG")
+DEBUG = env.bool("DJANGO_DEBUG", default=False)
 
 ALLOWED_HOSTS = ["*"]
 
 
+
+DATABASES = {
+    'default': env.db("DATABASE_URL")
+}
 # Application definition
 
 INSTALLED_APPS = [
@@ -96,6 +100,7 @@ DATABASES ={
 }
 
 
+postgresql://postgres:oXPSImEoPppEnZGRkRECKYHyQDvqqqxc@mainline.proxy.rlwy.net:11361/railway
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -139,3 +144,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 LOGIN_REDIRECT_URL = "ahmadapp"
 LOGIN_URL = "login"
+ 
