@@ -11,9 +11,6 @@ class ahmadapptask(models.Model):
     class Meta:
         
         ordering = ['id']
-    
-    
-    
-    
+
     def __str__(self):
         return self.task_name + "  " + str(self.done)
