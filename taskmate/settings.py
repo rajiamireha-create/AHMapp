@@ -22,7 +22,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 DEBUG = env.bool("DJANGO_DEBUG", default=False)
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1","ahmadapp.up.railway.app"]
-csrf_trusted_origins = ['ahmadapp.up.railway.app']
+csrf_trusted_origins = ['https://ahmadapp.up.railway.app']
 
 
 
